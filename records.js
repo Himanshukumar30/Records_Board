@@ -38,7 +38,9 @@ const makeHtmlBoard = () => {
   let top = document.createElement("tr");
   top.setAttribute("id", "column-top");
   top.classList.add("text-danger");
-  top.prepend("Team");
+  const firstTopHead = document.createElement("td");
+  firstTopHead.append("Team");
+  top.prepend(firstTopHead);
   for (let x = 0; x < WIDTH; x++) {
     let headCell = document.createElement("td");
     headCell.setAttribute("id", x);
@@ -53,7 +55,10 @@ const makeHtmlBoard = () => {
     const row = document.createElement("tr");
 
     // Append team names to Y-axis/ the first element of each row
-    row.append(`${teams[y]}`);
+    const firstCell = document.createElement("td");
+    firstCell.append(`${teams[y]}`);
+    row.append(firstCell);
+
     for (let x = 0; x < WIDTH; x++) {
       const cell = document.createElement("td");
       cell.setAttribute("id", `${y}-${x}`);
@@ -74,7 +79,9 @@ const makeHtmlBoard = () => {
   //   Dynamically create the bottom row
   let bottom = document.createElement("tr");
   bottom.setAttribute("id", "column-top");
-  bottom.prepend("Team");
+  const firstBottomHead = document.createElement("td");
+  firstBottomHead.append("Team");
+  bottom.prepend(firstBottomHead);
   for (let z = 0; z < WIDTH; z++) {
     let bottomCell = document.createElement("td");
     bottomCell.setAttribute("id", z);
