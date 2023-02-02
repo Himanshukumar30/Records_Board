@@ -32,7 +32,7 @@ const makeBoard = () => {
 const makeHtmlBoard = () => {
   //  get "htmlBoard" from the item in HTML w/ID of "records"
   let htmlBoard = document.querySelector("#records");
-  htmlBoard.classList.add("table", "table-bordered");
+  htmlBoard.classList.add("table", "table-bordered", "w-50", "m-auto");
 
   //  Dynamically create the top row
   let top = document.createElement("tr");
