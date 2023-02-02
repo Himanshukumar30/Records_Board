@@ -41,6 +41,7 @@ const makeHtmlBoard = () => {
   const firstTopHead = document.createElement("td");
   firstTopHead.append("Team");
   top.prepend(firstTopHead);
+
   for (let x = 0; x < WIDTH; x++) {
     let headCell = document.createElement("td");
     headCell.setAttribute("id", x);
